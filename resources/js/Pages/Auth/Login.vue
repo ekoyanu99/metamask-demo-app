@@ -5,6 +5,14 @@
         <template #logo>
             <jet-authentication-card-logo />
         </template>
+        <div class="text-center pt-4 pb-8 border-b border-gray-200">
+            <jet-button @click="loginWeb3">
+                Login with MetaMask
+            </jet-button>
+        </div>
+        <div class="py-6 text-sm text-gray-500 text-center">
+            or login with your credentials…
+        </div>
 
         <jet-validation-errors class="mb-4" />
 
@@ -92,6 +100,9 @@
                     .post(this.route('login'), {
                         onFinish: () => this.form.reset('password'),
                     })
+            },
+            async loginWeb3(){
+                // Our Meta Mask integration goes here
             }
         }
     })
